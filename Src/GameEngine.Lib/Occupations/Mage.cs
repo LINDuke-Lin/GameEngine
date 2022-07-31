@@ -24,5 +24,13 @@ namespace GameEngine.Lib.Occupations
             ability.Mattack = ability.Mattack.AbilityRatio(2);
             return ability;
         }
+
+        /// <summary>
+        /// 特殊技能
+        /// </summary>
+        public override AbilityDto Skills(Func<AbilityDto> Abilityfunc, AbilityDto ability)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

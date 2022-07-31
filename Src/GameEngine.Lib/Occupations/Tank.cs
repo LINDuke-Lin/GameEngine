@@ -27,7 +27,7 @@ namespace GameEngine.Lib.Occupations
         /// <summary>
         /// 特殊技能
         /// </summary>
-        public abstract AbilityDto Skills(Func<AbilityDto> Abilityfunc, AbilityDto ability)
+        public override AbilityDto Skills(Func<AbilityDto> Abilityfunc, AbilityDto ability)
         {
             throw new NotImplementedException();
         }
