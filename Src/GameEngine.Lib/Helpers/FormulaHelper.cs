@@ -30,18 +30,13 @@
             // 閃避補正
             int dodComp = dodge - accuracy;
             if (dodComp < 0)
-            {
                 dodComp = 0;
-            }
+
             if (dodComp > 100)
-            {
                 dodComp = 100;
-            }
 
             if (random.Next(0, 100) <= (baseDodgeProb + dodComp))
-            {
                 return true;
-            }
 
             return false;
         }
