@@ -19,6 +19,6 @@ namespace GameEngine.Lib.Occupations.Interfaces
         /// <summary>
         /// 特殊技能
         /// </summary>
-        //void Skills();
+        public abstract AbilityDto Skills(Func<AbilityDto> Abilityfunc, AbilityDto ability);
     }
 }

@@ -23,5 +23,13 @@ namespace GameEngine.Lib.Occupations
             ability.Agility = ability.Agility.AbilityRatio(1.5);
             return ability;
         }
+
+        /// <summary>
+        /// 特殊技能
+        /// </summary>
+        public override AbilityDto Skills(Func<AbilityDto> Abilityfunc, AbilityDto ability)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
