@@ -31,7 +31,7 @@ namespace GameEngine.Lib.Skills
         /// </summary>
         /// <param name="ap">我方</param>
         /// <param name="hp">對方</param>
-        private void CheckData(double ap, double hp)
+        private static void CheckData(double ap, double hp)
         {
             if (ap < 5)
                 throw new Exception($"AP不足，無法攻擊");
@@ -63,9 +63,9 @@ namespace GameEngine.Lib.Skills
             // 發動條件確認
             CheckData(userAbility.ActionPoint, othersAbility.Health);
             //計算傷害
-            int damage = FormulaHelper.GetDamage(userAbility.Strength, userAbility.Attack);
+            int damage = userAbility.Strength.GetDamage(userAbility.Attack);
             //扣血
-            othersAbility.Health = othersAbility.Health - damage;
+            othersAbility.Health -= damage;
             //血量補正
             if (othersAbility.Health <= 0)
                 othersAbility.Health = 0;
@@ -105,7 +105,7 @@ namespace GameEngine.Lib.Skills
         /// <returns>施展技能後的能力</returns>
         public AbilityDto AfterUsedSkill(AbilityDto userAbility)
         {
-            userAbility.ActionPoint = userAbility.ActionPoint - 5;
+            userAbility.ActionPoint -= 5;
             return userAbility;
         }
     }
